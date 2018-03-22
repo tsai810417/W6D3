@@ -15,6 +15,7 @@ class TweetsController < ApplicationController
     end
   end
 
+  json.partial!("tweets/tweet", tweet: @tweet)
   private
   def tweet_params
     params.require(:tweet).permit(:content, mentioned_user_ids: [])
